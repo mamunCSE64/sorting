@@ -75,16 +75,11 @@ int main()
         for(i=0;i<n;i++){
             count[v[i]]++;
         }
-        vector<ll> psum(x+1);
-        ll sum=0;
+        vector<int> ans;
         for(i=0;i<=x;i++){
-            sum+=count[i];
-            psum[i]=sum;
-        }
-        vector<ll> ans(n);
-        for(i=0;i<n;i++){
-            psum[v[i]]--;
-            ans[psum[v[i]]]=v[i];
+            while(count[i]--){
+                ans.pb(i);
+            }
         }
         for(auto x: ans){
             cout << x sp;
